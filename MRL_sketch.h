@@ -1,6 +1,7 @@
 #ifndef MRL_SKETCH
 #define MRL_SKETCH
 #include <utility>
+#include <vector>
 
 class MRL_sketch
 {
@@ -14,7 +15,6 @@ private:
     std::vector<std::pair<int,int>> B;
 public:
     MRL_sketch(int n,float e);
-    ~MRL_sketch();
 
     void insertar(int i);
     int rank(int x);
