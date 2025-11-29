@@ -74,3 +74,7 @@ int MRL_sketch::select(int r){
     }
     return primero;
 }
+
+int MRL_sketch::quantile(float valor){
+    return select(std::ceil(valor*n));
+}

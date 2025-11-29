@@ -15,9 +15,10 @@ private:
     std::vector<std::pair<int,int>> B;
 public:
     MRL_sketch(int n,float e);
-
     void insertar(int i);
     int rank(int x);
     int select(int r);
+    int quantile(float valor);
+
 };
 #endif
