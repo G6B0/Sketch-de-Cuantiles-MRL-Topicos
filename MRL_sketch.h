@@ -1,6 +1,6 @@
 #ifndef MRL_SKETCH
 #define MRL_SKETCH
-
+#include <utility>
 
 class MRL_sketch
 {
@@ -11,6 +11,7 @@ private:
     int k; //se calcula con e
     int L; // se calcula con k
     std::vector<std::vector<int>> A; // vector de niveles
+    std::vector<std::pair<int,int>> B;
 public:
     MRL_sketch(int n,float e);
     ~MRL_sketch();
