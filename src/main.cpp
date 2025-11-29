@@ -56,7 +56,8 @@ int main() {
         std::cout << "\nMenu de consultas:\n";
         std::cout << "1. rank(x)\n";
         std::cout << "2. select(r)\n";
-        std::cout << "3. Salir\n";
+        std::cout << "3. quantile(phi)\n";
+        std::cout << "4. Salir\n";
         std::cout << "Elija una opcion: ";
         std::cin >> opcion;
 
@@ -72,7 +73,20 @@ int main() {
             std::cin >> r;
             std::cout << "select(" << r << ") = " << MRL.select(r) << "\n";
         }
-        else if (opcion == 3) {
+        else if (opcion == 3){
+            double phi;
+            std::cout << "Ingrese phi en [0,1]: ";
+            std::cin >> phi;
+
+            if (phi < 0 || phi > 1){
+                std::cout << "phi debe estar en [0,1].\n";
+                continue;
+            }
+
+            int q = MRL.quantile(phi);
+             std::cout << "quantile(" << phi << ") = " << q << "\n";
+        }
+        else if (opcion == 4) {
             break;
         }
         else {
