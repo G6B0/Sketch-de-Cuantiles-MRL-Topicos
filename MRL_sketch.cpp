@@ -2,10 +2,15 @@
 #include "MRL_sketch.h"
 #include <vector>
 #include <algorithm>
+#include <iostream>
 
 MRL_sketch::MRL_sketch(int n, float e) : n(n), e(e){
     k = (1.0 / e) * (std::ceil(std::log2(e * n))) + 1;
+    if(k%2 != 0) k++;
+    if(k <= 0) k=2;
+    std::cout << "El valor de k es: " << k << "\n";
     L = std::ceil(std::log2(n / k));
+    std::cout << "El valor de L es: " << L << "\n";
     A.resize(L+1);
     for (size_t i = 0; i <= L; i++)
     {
@@ -14,31 +19,30 @@ MRL_sketch::MRL_sketch(int n, float e) : n(n), e(e){
 }
 
 void MRL_sketch::insertar(int i){
+    B.clear();
     A[0].emplace_back(i);
     int j = 0;
-    while (A[j].size() == k)
+    while (A[j].size() == k && j < L)
     {
         std::sort(A[j].begin(), A[j].end());
         if (j+1 <= L){
-            for (size_t u = 0; u < A[j].size()/2; u++)
+            for (size_t u = 0; u < k/2; u++)
                 {
-                    A[j+1].emplace_back(A[j][2*u+1]);
+                    A[j+1].push_back(A[j][2*u+1]);
                 }
         }
-
         A[j].clear();
-        B.clear();
         j++;
     }
 }
 
 int MRL_sketch::rank(int x){
     int ans = 0;
-    for (size_t j = 0; j < L; j++)
+    for (size_t j = 0; j <= L; j++)
     {
-        for (size_t z = 0; z < A[j].size(); z++)
+        for (int z : A[j])
         {
-            if (A[j][z] < x){
+            if (z < x){
                 ans = ans + (1 << j);
             }
         }
