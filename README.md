@@ -4,11 +4,11 @@ Este proyecto realiza un análisis experimental del algoritmo MRL Sketch utiliza
 
 ## Requisitos Previos
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
+Se debe tener instalado:
 
-* **Compilador C++:** Compatible con el estándar C++14 (ej. `g++`).
-* **Python 3:** Para la generación de gráficos.
-* **Librerías de Python:** (Opcional: Si tu `plot.py` usa `matplotlib` o `pandas`, lístalas aquí).
+* **Compilador C++** compatible con el estándar C++14.
+* **Python 3** para la generación de gráficos.
+* **Librerías de Python** (pandas, numpy).
 
 ## Estructura de Datos
 
