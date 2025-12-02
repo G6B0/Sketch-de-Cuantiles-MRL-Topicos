@@ -1,12 +1,3 @@
-
-Poseer al menos uno de los archivos "chicago2015.txt", "chicago2016.txt", "Uniform.txt" y/o "Log-normal.txt" en una carpeta "data"
-
-g++ experimental_analysis.cpp MRL_sketch.cpp -o experimental -std=c++14 -O2
-
-./experimental
-
-python3 plot.py
-
 # Análisis Experimental: MRL Sketch
 
 Este proyecto realiza un análisis experimental del algoritmo MRL Sketch utilizando C++ para el procesamiento de datos y Python para la visualización de resultados.
