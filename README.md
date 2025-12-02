@@ -27,14 +27,16 @@ Para compilar el código fuente, utiliza el siguiente comando:
 
 ```bash
 g++ experimental_analysis.cpp MRL_sketch.cpp -o experimental -std=c++14 -O2
+```
 
 Ejecuta el binario generado.
 
 ```bash
 ./experimental
-
+```
 Una vez finalizado el experimento, utiliza el script de Python para visualizar los resultados y generar respectivos graficos:
 Bash
 
 ```bash
 python3 plot.py
+```
